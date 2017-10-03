@@ -35,17 +35,13 @@ db.once('open', () => {
     }
 
     if (!document){
-      const matrice = []
+      const array = []
       for (var i = 0; i < 5; i++){
-        let row = []
-        for (var k = 0; k < 5; k++){
-          row.push(k)
-        }
-        matrice.push(row)
+        array.push(0)
       }
 
       let temp = new Board({
-        board: matrice
+        board: array
       })
 
       temp.save()
