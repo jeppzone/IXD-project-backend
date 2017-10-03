@@ -30,11 +30,9 @@ var interval = setInterval(function(){
   if (fetching) {
     return
   }
-
   fetching = true
   fetch().then(function(res){
     body.innerHTML = ''
-
     var arr = res.data.board
     arr.forEach(function(val){
       append(createTile(val))
