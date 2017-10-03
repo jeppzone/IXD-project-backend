@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.tile {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background-color: transparent;
+}
+
+.tile.forest{
+  background-color: green;
+}
+
+.tile.farm {
+  background-color: red;
+}
