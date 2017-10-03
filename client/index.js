@@ -13,7 +13,6 @@ function createTile(type){
 
   var el = document.createElement('div')
   el.className = 'tile ' + types[type]
-  el.style.opacity = getRandomInt(0.6,1)
   return el
 }
 
@@ -37,8 +36,7 @@ var interval = setInterval(function(){
     arr.forEach(function(val){
       append(createTile(val))
     })
-
     fetching = false
   })
 
-}, 1000)
+}, 5000)
