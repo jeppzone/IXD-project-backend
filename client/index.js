@@ -11,7 +11,8 @@ function createTile(type){
     1: 'farm'
   }
 
-  var el = document.createElement('div')
+  var el = document.createElement('img')
+  el.src = './assets/' + types[type] + '.svg'
   el.className = 'tile ' + types[type]
   return el
 }

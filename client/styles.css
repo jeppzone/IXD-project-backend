@@ -1,3 +1,7 @@
+html {
+  background-color: #4CC553;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -9,16 +13,7 @@ body {
 .tile {
   padding: 0;
   margin: 0;
-  width: 25px;
-  height: 25px;
+  width: 50px;
+  height: 50px;
   display: inline-block;
-  background-color: transparent;
-}
-
-.tile.forest{
-  background-color: green;
-}
-
-.tile.farm {
-  background-color: red;
 }
