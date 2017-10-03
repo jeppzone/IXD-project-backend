@@ -13,8 +13,24 @@ module.exports = function(express) {
   .post((req, res) => {
     Board.findOne({}, (err, document) => {
       let board = document.board;
-      let index = board.findIndex(value => value === 0);
-      board[index] = 1;
+      let index = Math.floor(Math.random() * (board.length));
+      var isSet = false;
+      for(var i = index; i < board.length; i++){
+        if(board[i] === 0){
+          board[i] = 1;
+          isSet = true;
+          break;
+        }
+      }
+      if(!isSet){
+        for(var j = 0; j < index; j++){
+          if(board[j] === 0){
+            board[j] = 1;
+            isSet = true;
+            break;
+          }
+        }
+      }
       var newBoard = new Board();
       newBoard.board = board;
       Board.remove({}, (err) =>{
