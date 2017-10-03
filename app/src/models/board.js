@@ -1,6 +1,5 @@
 const mongoose = require('mongoose'),
-      Schema = mongoose.Schema,
-      ObjectId = mongoose.Schema.types.ObjectId;
+      Schema = mongoose.Schema
 
 var BoardSchema = new Schema({
   board: {type: [[]]}
