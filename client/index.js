@@ -1,3 +1,4 @@
+var API_URL = 'http://localhost:3000'
 var body = document.querySelector('body');
 
 function getRandomInt(min, max) {
@@ -21,7 +22,7 @@ function append(el){
 }
 
 function fetch(){
-  return axios.get('http://localhost:3000/board')
+  return axios.get(API_URL + '/board')
 }
 
 var fetching = false
