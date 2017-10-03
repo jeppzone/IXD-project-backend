@@ -9,7 +9,6 @@ module.exports = function(express) {
       if(err) return res.status(404).send({message: 'Board not found'});
       return res.status(200).json(document);
     })
-    res.status(200).send('GET on /board');
   })
   .post((req, res) => {
     Board.findOne({}, (err, document) => {
