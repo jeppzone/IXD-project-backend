@@ -8,16 +8,11 @@ function getRandomInt(min, max) {
 function createTile(type){
   var types = {
     0: 'forest',
-    1: 'farm',
-    2: 'ground'
+    1: 'farm'
   }
 
-  if (type === 0 || type === 1){
-    var el = document.createElement('img')
-    el.src = './assets/' + types[type] + '.svg'
-  } else {
-    var el = document.createElement('div')
-  }
+  var el = document.createElement('img')
+  el.src = './assets/' + types[type] + '.svg'
   el.className = 'tile ' + types[type]
   return el
 }
@@ -41,11 +36,6 @@ var interval = setInterval(function(){
     var arr = res.data.board
     arr.forEach(function(val){
       append(createTile(val))
-      if (val === 1){
-        append(createTile(2))
-        append(createTile(2))
-        append(createTile(2))
-      }
     })
     fetching = false
   })
