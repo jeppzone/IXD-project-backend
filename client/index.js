@@ -7,14 +7,23 @@ function getRandomInt(min, max) {
 
 function createTile(type){
   var types = {
-    0: 'forest',
-    1: 'farm'
+    0: {
+      name: 'forest',
+      type: '.svg'
+    },
+    1: {
+      name: 'farm',
+      type: '.svg'
+    }
   }
 
+  var container = document.createElement('div')
   var el = document.createElement('img')
-  el.src = './assets/' + types[type] + '.svg'
-  el.className = 'tile ' + types[type]
-  return el
+  el.src = './assets/' + types[type].name + types[type].type
+
+  container.className = 'tile ' + types[type].name
+  container.appendChild(el)
+  return container
 }
 
 function append(el){
