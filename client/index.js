@@ -9,17 +9,17 @@ function createTile(type){
   var types = {
     0: {
       name: 'forest',
-      type: '.svg'
+      format: '.svg'
     },
     1: {
       name: 'farm',
-      type: '.svg'
+      format: '.svg'
     }
   }
 
   var container = document.createElement('div')
   var el = document.createElement('img')
-  el.src = './assets/' + types[type].name + types[type].type
+  el.src = './assets/' + types[type].name + types[type].format
 
   container.className = 'tile ' + types[type].name
   container.appendChild(el)

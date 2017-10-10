@@ -19,6 +19,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
+  margin: 1px;
+}
+
+.tile.farm {
+  background-color: rgba(0,0,0,0.15);
+}
+
+.tile.forest {
+  background-color: transparent;
 }
 
 .tile img {
