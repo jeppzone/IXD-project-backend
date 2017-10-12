@@ -21,7 +21,8 @@ app.use(accessControlAllowOrigin);
 app.use('/', index(express))
 app.use(logger);
 
-mongoose.connect('mongodb://localhost:27017/ixdproject');
+var mongoAdress = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/ixdproject';
+mongoose.connect(mongoAdress);
 let db = mongoose.connection;
 
 // Setup our board
