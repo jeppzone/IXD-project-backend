@@ -47,6 +47,6 @@ db.once('open', () => {
   })
 })
 
-app.listen(3000, () => {
+app.listen(process.env.port || 3000, () => {
   console.log('Magic happens on 3000');
 })
