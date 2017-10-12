@@ -1,4 +1,5 @@
 const Board = require('../models/board');
+const util = require('../util');
 
 module.exports = function(express) {
   const Router = express.Router();
@@ -42,6 +43,13 @@ module.exports = function(express) {
   })
   .put((req, res) => {
 
+  })
+  .delete((req, res) => {
+    util.clearBoard(function() {
+      util.createNewBoard(function() {
+        res.status(200).send();
+      })
+    })
   })
 
   return Router;

@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require('mongoose');
 const Board = require('./models/board')
 const index = require('./routes/index');
+const util = require('./util');
 
 function accessControlAllowOrigin(req, res, next){
   res.header('Access-Control-Allow-Origin', req.headers.origin)
@@ -34,16 +35,9 @@ db.once('open', () => {
     }
 
     if (!document){
-      const array = []
-      for (var i = 0; i < 1000; i++){
-        array.push(0)
-      }
-
-      let temp = new Board({
-        board: array
-      })
-
-      temp.save()
+      util.createNewBoard(() => {
+        console.log('Done creating board');
+      });
     }
   })
 })
