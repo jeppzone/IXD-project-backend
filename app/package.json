@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
   },
+  "keywords": [
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -14,5 +18,8 @@
     "mongoose": "^4.12.0",
     "morgan": "^1.9.0",
     "nodemon": "^1.12.1"
-  }
+  },
+   "engines": {
+     "node": "6.11.3"
+   }
 }
