@@ -54,7 +54,7 @@ module.exports = function(express) {
   });
 
   Router.route('/information')
-    .get((req, res => {
+    .get((req, res) => {
       Board.findOne({}, (err, document) => {
         res.status(200).send();
       })
