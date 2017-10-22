@@ -12,7 +12,10 @@ function createNewBoard(callback) {
   }
 
   let temp = new Board({
-    board: array
+    board: array,
+    nbrOfGamesPlayed: 0,
+    forestDestroyed: 0,
+    forestLeft: 10000
   })
 
   temp.save(() => {

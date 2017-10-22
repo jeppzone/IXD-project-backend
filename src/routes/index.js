@@ -51,7 +51,14 @@ module.exports = function(express) {
         res.status(200).send();
       })
     })
-  })
+  });
+
+  Router.route('/information')
+    .get((req, res => {
+      Board.findOne({}, (err, document) => {
+        res.status(200).json({hamburgers: document.hamburgers, rainforestGone: document.rainforestGone, homelessAnimals: document.homelessAnimals})
+      })
+    })
 
   return Router;
 }
