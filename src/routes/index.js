@@ -39,6 +39,7 @@ module.exports = function(express) {
       newBoard.forestGone = document.forestGone + req.body.forestGone;
       newBoard.homelessAnimals = document.homelessAnimals + req.body.homelessAnimals;
       newBoard.nbrOfGamesPlayed = document.nbrOfGamesPlayed++;
+      console.log(newBoard);
       Board.remove({}, (err) =>{
         newBoard.save((err, document) => {
           res.status(200).json(document);

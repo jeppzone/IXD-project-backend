@@ -3,10 +3,10 @@ const mongoose = require('mongoose'),
 
 var BoardSchema = new Schema({
   board: {type: [Number]},
-  nbrOfGamesPlayed: {type: Number},
-  forestGone: {type: Number},
-  hamburgers: {type: Number},
-  homelessAnimals: {type: Number}
+  nbrOfGamesPlayed: {},
+  forestGone: {},
+  hamburgers: {},
+  homelessAnimals: {}
 })
 
 module.exports = mongoose.model('Board', BoardSchema);
