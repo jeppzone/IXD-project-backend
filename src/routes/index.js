@@ -61,7 +61,10 @@ module.exports = function(express) {
   Router.route('/information')
     .get((req, res) => {
       Board.findOne({}, (err, document) => {
-        res.status(200).json({hamburgers: document.hamburgers, homelessAnimals: document.homelessAnimals, forestGone: document.forestGone});
+        console.log(err);
+        console.log(document);
+        if(!err)res.status(200).json({hamburgers: document.hamburgers, homelessAnimals: document.homelessAnimals, forestGone: document.forestGone});
+        res.status(404).send();
       })
     })
 
