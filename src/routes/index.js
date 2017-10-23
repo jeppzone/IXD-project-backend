@@ -12,6 +12,7 @@ module.exports = function(express) {
     })
   })
   .post((req, res) => {
+    console.log(req.body);
     Board.findOne({}, (err, document) => {
       let board = document.board;
       let index = Math.floor(Math.random() * (board.length));
@@ -34,7 +35,7 @@ module.exports = function(express) {
       }
       var newBoard = new Board();
       newBoard.board = board;
-      if(req.query){
+      if(req.body){
         newBoard.hamburgers = document.hamburgers + req.query.hamburgers;
         newBoard.forestGone = document.forestGone + req.query.forestGone;
         newBoard.homelessAnimals = document.homelessAnimals + req.query.homelessAnimals;

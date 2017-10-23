@@ -1,4 +1,5 @@
 const express = require('express');
+var bodyParser = require('body-parser');
 const logger = require('morgan');
 const app = express();
 const mongoose = require('mongoose');
@@ -17,7 +18,7 @@ function accessControlAllowOrigin(req, res, next){
 
   next()
 }
-
+app.use(bodyParser.urlencoded(extended: true));
 app.use(accessControlAllowOrigin);
 app.use('/', index(express))
 app.use(logger);
