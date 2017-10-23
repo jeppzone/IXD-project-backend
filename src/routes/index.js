@@ -35,11 +35,10 @@ module.exports = function(express) {
       }
       var newBoard = new Board();
       newBoard.board = board;
-      if(req.body){
-        newBoard.hamburgers = document.hamburgers + req.body.hamburgers;
-        newBoard.forestGone = document.forestGone + req.body.forestGone;
-        newBoard.homelessAnimals = document.homelessAnimals + req.body.homelessAnimals;
-      }
+      newBoard.hamburgers = document.hamburgers + req.body.hamburgers;
+      newBoard.forestGone = document.forestGone + req.body.forestGone;
+      newBoard.homelessAnimals = document.homelessAnimals + req.body.homelessAnimals;
+      newBoard.nbrOfGamesPlayed = document.nbrOfGamesPlayed++;
       Board.remove({}, (err) =>{
         newBoard.save((err, document) => {
           res.status(200).json(document);
