@@ -12,8 +12,6 @@ module.exports = function(express) {
     })
   })
   .post((req, res) => {
-    console.log('In post on /board with req: ', req);
-    console.log(req.query);
     Board.findOne({}, (err, document) => {
       let board = document.board;
       let index = Math.floor(Math.random() * (board.length));
@@ -36,10 +34,10 @@ module.exports = function(express) {
       }
       var newBoard = new Board();
       newBoard.board = board;
-      if(req.body){
-        newBoard.hamburgers = document.hamburgers + req.body.hamburgers;
-        newBoard.forestGone = document.forestGone + req.body.forestGone;
-        newBoard.homelessAnimals = document.homelessAnimals + req.body.homelessAnimals;
+      if(req.query){
+        newBoard.hamburgers = document.hamburgers + req.query.hamburgers;
+        newBoard.forestGone = document.forestGone + req.query.forestGone;
+        newBoard.homelessAnimals = document.homelessAnimals + req.query.homelessAnimals;
       }
       Board.remove({}, (err) =>{
         newBoard.save((err, document) => {
