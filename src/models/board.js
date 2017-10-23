@@ -4,7 +4,7 @@ const mongoose = require('mongoose'),
 var BoardSchema = new Schema({
   board: {type: [Number]},
   nbrOfGamesPlayed: {default: 0},
-  forestGone: {default: 20.0},
+  forestGone: {default: 20},
   hamburgers: {default: 0},
   homelessAnimals: {default: 0}
 })
