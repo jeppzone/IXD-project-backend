@@ -36,7 +36,7 @@ module.exports = function(express) {
       var newBoard = new Board();
       newBoard.board = board;
       newBoard.hamburgers = document.hamburgers ? parseInt(document.hamburgers) + parseInt(req.body.hamburgers): parseInt(req.body.hamburgers);
-      newBoard.forestGone = document.forestGone ? document.forestGone + req.body.forestGone: req.body.forestGone;
+      newBoard.forestGone = document.forestGone ? document.forestGone + req.body.rainforestGone: req.body.rainforestGone;
       newBoard.homelessAnimals = document.homelessAnimals ? parseInt(document.homelessAnimals) + parseInt(req.body.homelessAnimals): parseInt(req.body.homelessAnimals);
       newBoard.nbrOfGamesPlayed = document.nbrOfGamesPlayed++;
       console.log(newBoard.hamburgers);
