@@ -39,7 +39,9 @@ module.exports = function(express) {
       newBoard.forestGone = document.forestGone ? document.forestGone + req.body.forestGone: req.body.forestGone;
       newBoard.homelessAnimals = document.homelessAnimals ? parseInt(document.homelessAnimals) + parseInt(req.body.homelessAnimals): parseInt(req.body.homelessAnimals);
       newBoard.nbrOfGamesPlayed = document.nbrOfGamesPlayed++;
-      console.log(newBoard);
+      console.log(newBoard.hamburgers);
+      console.log(newBoard.forestGone);
+      console.log(newBoard.homelessAnimals);
       Board.remove({}, (err) =>{
         newBoard.save((err, document) => {
           res.status(200).json(document);
