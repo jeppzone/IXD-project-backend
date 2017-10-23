@@ -8,7 +8,7 @@ const index = require('./routes/index');
 const util = require('./util');
 
 function accessControlAllowOrigin(req, res, next){
-  res.header('Access-Control-Allow-Origin', req.headers.origin)
+  res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
   res.header('Access-Control-Allow-Headers', 'Origin, Authorization, Content-Type, Content-Length')
   res.header('Access-Control-Allow-Credentials', 'true')
@@ -19,6 +19,7 @@ function accessControlAllowOrigin(req, res, next){
   next()
 }
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 app.use(accessControlAllowOrigin);
 app.use('/', index(express))
 app.use(logger);
