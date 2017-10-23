@@ -36,9 +36,9 @@ module.exports = function(express) {
       var newBoard = new Board();
       newBoard.board = board;
       if(req.body){
-        newBoard.hamburgers = document.hamburgers + req.query.hamburgers;
-        newBoard.forestGone = document.forestGone + req.query.forestGone;
-        newBoard.homelessAnimals = document.homelessAnimals + req.query.homelessAnimals;
+        newBoard.hamburgers = document.hamburgers + req.body.hamburgers;
+        newBoard.forestGone = document.forestGone + req.body.forestGone;
+        newBoard.homelessAnimals = document.homelessAnimals + req.body.homelessAnimals;
       }
       Board.remove({}, (err) =>{
         newBoard.save((err, document) => {

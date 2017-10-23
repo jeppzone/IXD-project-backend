@@ -18,7 +18,7 @@ function accessControlAllowOrigin(req, res, next){
 
   next()
 }
-app.use(bodyParser.urlencoded(extended: true));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(accessControlAllowOrigin);
 app.use('/', index(express))
 app.use(logger);
