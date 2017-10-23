@@ -12,7 +12,7 @@ module.exports = function(express) {
     })
   })
   .post((req, res) => {
-    console.log('In post on /board');
+    console.log('In post on /board with req: ', req.body);
     Board.findOne({}, (err, document) => {
       let board = document.board;
       let index = Math.floor(Math.random() * (board.length));
@@ -56,7 +56,7 @@ module.exports = function(express) {
   Router.route('/information')
     .get((req, res) => {
       Board.findOne({}, (err, document) => {
-        res.status(200).send();
+        res.status(200).json({hamburgers: document.hamburgers, homelessAnimals: document.homelessAnimals, forestGone: document.forestGone});
       })
     })
 
