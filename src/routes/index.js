@@ -13,7 +13,7 @@ module.exports = function(express) {
   })
   .post((req, res) => {
     console.log('In post on /board with req: ', req);
-    console.log(req._readableState.buffer);
+    console.log(req.query);
     Board.findOne({}, (err, document) => {
       let board = document.board;
       let index = Math.floor(Math.random() * (board.length));
