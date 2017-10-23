@@ -13,6 +13,7 @@ module.exports = function(express) {
   })
   .post((req, res) => {
     console.log('In post on /board with req: ', req);
+    console.log(req.body);
     Board.findOne({}, (err, document) => {
       let board = document.board;
       let index = Math.floor(Math.random() * (board.length));
@@ -42,7 +43,7 @@ module.exports = function(express) {
       }
       Board.remove({}, (err) =>{
         newBoard.save((err, document) => {
-          res.status(200).json(document.board);
+          res.status(200).json(document);
         })
       })
     })
