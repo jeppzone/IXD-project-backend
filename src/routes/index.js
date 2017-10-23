@@ -63,7 +63,7 @@ module.exports = function(express) {
       Board.findOne({}, (err, document) => {
         console.log(err);
         console.log(document);
-        if(!err)res.status(200).json({hamburgers: document.hamburgers, homelessAnimals: document.homelessAnimals, forestGone: document.forestGone});
+        if(document)res.status(200).json({hamburgers: document.hamburgers, homelessAnimals: document.homelessAnimals, forestGone: document.forestGone});
         res.status(404).send();
       })
     })
