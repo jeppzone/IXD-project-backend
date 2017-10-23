@@ -13,7 +13,7 @@ module.exports = function(express) {
   })
   .post((req, res) => {
     console.log('In post on /board with req: ', req);
-    console.log(req.body);
+    console.log(req._readableState.buffer);
     Board.findOne({}, (err, document) => {
       let board = document.board;
       let index = Math.floor(Math.random() * (board.length));
@@ -49,7 +49,7 @@ module.exports = function(express) {
     })
   })
   .put((req, res) => {
-
+    console.log('In /put with request: ', req);
   })
   .delete((req, res) => {
     util.clearBoard(function() {
