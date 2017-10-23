@@ -35,9 +35,9 @@ module.exports = function(express) {
       }
       var newBoard = new Board();
       newBoard.board = board;
-      newBoard.hamburgers = document.hamburgers + req.body.hamburgers;
-      newBoard.forestGone = document.forestGone + req.body.forestGone;
-      newBoard.homelessAnimals = document.homelessAnimals + req.body.homelessAnimals;
+      newBoard.hamburgers = parseInt(document.hamburgers) + parseInt(req.body.hamburgers);
+      newBoard.forestGone = parseDouble(document.forestGone) + parseDouble(req.body.forestGone);
+      newBoard.homelessAnimals = parseInt(document.homelessAnimals) + parseInt(req.body.homelessAnimals);
       newBoard.nbrOfGamesPlayed = document.nbrOfGamesPlayed++;
       console.log(newBoard);
       Board.remove({}, (err) =>{
