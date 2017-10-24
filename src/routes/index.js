@@ -70,5 +70,35 @@ module.exports = function(express) {
       })
     })
 
+    Router.route('/fix')
+    .post((req, res){
+      Board.findOne({}, (err, doc) => {
+        var newBoard = new Board();
+        newBoard.hamburgers = doc.burgers;
+        newBoard.forestGone = doc.forestGone;
+        newBoard.homelessAnimals = doc.homelessAnimals;
+        var arr = [];
+        for(var i = 0; i < 900; i++){
+          arr.push(1);
+        }
+        for(var i = 0; i < 100; i++){
+          arr.push(0);
+        }
+        shuffle(arr);
+        newBoard.board = arr;
+        newBoard.save();
+      }
+    })
+
   return Router;
+}
+
+function shuffle(a) {
+   var j, x, i;
+   for (i = a.length - 1; i > 0; i--) {
+       j = Math.floor(Math.random() * (i + 1));
+       x = a[i];
+       a[i] = a[j];
+       a[j] = x;
+   }
 }
