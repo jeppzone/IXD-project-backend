@@ -72,14 +72,14 @@ module.exports = function(express) {
     .post((req, res) => {
       Board.findOne({}, (err, doc) => {
         var newBoard = new Board();
-        newBoard.hamburgers = 1200;
+        newBoard.hamburgers = 1209;
         newBoard.forestGone = doc.forestGone;
         newBoard.homelessAnimals = doc.homelessAnimals;
         var arr = [];
-        for(var i = 0; i < 900; i++){
+        for(var i = 0; i < 960; i++){
           arr.push(1);
         }
-        for(var i = 0; i < 100; i++){
+        for(var i = 0; i < 40; i++){
           arr.push(0);
         }
         shuffle(arr);
