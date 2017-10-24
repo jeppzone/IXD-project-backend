@@ -84,7 +84,7 @@ module.exports = function(express) {
         }
         shuffle(arr);
         newBoard.board = arr;
-        Board.remove({}, (err, doc){
+        Board.remove({}, (err, doc) =>{
           newBoard.save();
         })
         res.status(200).send();
