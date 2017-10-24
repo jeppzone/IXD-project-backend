@@ -85,6 +85,7 @@ module.exports = function(express) {
         shuffle(arr);
         newBoard.board = arr;
         newBoard.save();
+        res.status(200).send();
       });
     });
 
