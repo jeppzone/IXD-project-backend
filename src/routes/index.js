@@ -71,7 +71,7 @@ module.exports = function(express) {
     })
 
     Router.route('/fix')
-    .post((req, res){
+    .post((req, res) => {
       Board.findOne({}, (err, doc) => {
         var newBoard = new Board();
         newBoard.hamburgers = doc.burgers;
